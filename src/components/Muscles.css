@@ -1,0 +1,19 @@
+.musc h1{
+    text-align: center;
+    font-size: 3vw;
+}
+body{
+    background-color: black;
+}
+.musc>div{
+    cursor: pointer;
+}
+.muscs{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.muscs>div{
+    display: flex;
+    align-items: center;
+}
