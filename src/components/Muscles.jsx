@@ -61,7 +61,6 @@ const Muscles = ({ searchTerm }) => {
     {
       "muscle":"Triceps",
       "img":"https://www.transparentlabs.com/cdn/shop/articles/best_triceps_workout_1.jpeg?v=1653436238",
-    
     },
   ];
 

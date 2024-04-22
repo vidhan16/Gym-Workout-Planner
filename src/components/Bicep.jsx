@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams, Link } from 'react-router-dom';
 
 export default function Bicep() {
-  const [selectedExercise, setSelectedExercise] = useState(false);
+  const [selectedExercise, setSelectedExercise] = useState(null);
   const { musclename } = useParams();
   const [selectedDifficulties, setSelectedDifficulties] = useState([]);
   const [sort, setSort] = useState(false);
@@ -35,13 +35,13 @@ export default function Bicep() {
     setSidebarVisible(!sidebarVisible);
   };
 
-  // const openExerciseModal = (exercise) => {
-  //   setSelectedExercise(exercise);
-  // };
+  const openExerciseModal = (exercise) => {
+    setSelectedExercise(exercise);
+  };
 
-  // const closeExerciseModal = () => {
-  //   setSelectedExercise(null);
-  // };
+  const closeExerciseModal = () => {
+    setSelectedExercise(null);
+  };
   return (
     <div className='flex relative'>
         {!sidebarVisible && <button className='absolute top-[1vw] left-5 cursor-pointer z-50' onClick={toggleSidebar}>
@@ -101,28 +101,37 @@ export default function Bicep() {
       {sidebarVisible && document.querySelector('.bic').addEventListener('click',function(){
         setSidebarVisible(false);
       })}
-      {/* {selectedExercise &&
-      (
-        <div className="exercise-modal absolute top-[0vw] p-4 rounded-lg left-[30vw] z-10 bg-zinc-800 text-white w-96">
-          <div className="modal-content">
-            <img src={selectedExercise.img} alt={selectedExercise.name} />
-            <p>{selectedExercise.instructions}</p>
-            <button onClick={closeExerciseModal}>Close</button>
-          </div>
-        </div>
-      )
-      } */}
       <div className='bic container-fluid relative'>
         <h1 className='w-full text-center font-semibold text-3xl mb-2'>Exercises for {musclename.toUpperCase()}</h1>
         <div className="row gap-2 flex justify-center text-center">
           {filteredExercises.map((exercise) => (
             <div key={exercise.name} className='bics col-lg-3 col-md-8 col-sm-8 col-xs-12 mb-4'>
-              <img className='cursor-pointer' src={exercise.img} alt={exercise.name} onClick={()=>{setSelectedExercise(true)}}/>
+              <img className='cursor-pointer' src={exercise.img} alt={exercise.name} onClick={()=>{openExerciseModal(exercise)}}/>
               <p>{exercise.name}</p>
             </div>
           ))}
         </div>
       </div>
+      {selectedExercise && window.innerWidth>1300 ?
+              (
+                <div className="scrollbar exercise-modal top-[15%] p-4 h-[100vh] w-1/3 z-10 bg-zinc-800 text-white overflow-y-scroll">
+                  <div className="modal-content">
+                    <button onClick={closeExerciseModal} className='absolute left-0'><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/macos-close.png" alt="macos-close"/></button>
+                    <img src={selectedExercise.img} alt={selectedExercise.name} />
+                    <p>{selectedExercise.instructions}</p>
+                  </div>
+                </div>
+              ) : 
+              // (  <div className="scrollbar exercise-modal p-4 h-full w-full absolute z-10 bg-zinc-800 text-white overflow-y-scroll">
+              //     <div className="modal-content">
+              //       <button onClick={closeExerciseModal} className='absolute left-0'><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/macos-close.png" alt="macos-close"/></button>
+              //       <img src={selectedExercise.img} alt={selectedExercise.name} />
+              //       <p>{selectedExercise.instructions}</p>
+              //     </div>
+              //   </div>
+              // )
+              null
+              }
     </div>
   );
 }
