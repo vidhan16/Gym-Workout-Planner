@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Google from './google.png';
 import Logo from './Logo.png';
 import { Link } from 'react-router-dom';
+import emailjs from '@emailjs/browser';
 
 export default function Signin() {
   const [register, setRegister] = useState(false);
@@ -63,6 +64,7 @@ export default function Signin() {
       localStorage.setItem('users', JSON.stringify(users));
 
       setsucsignup(true);
+      sendEmail;
       console.log('User registered successfully:', userData);
       setEmail('');
       setPassword('');
@@ -108,6 +110,9 @@ export default function Signin() {
       }
 
       setsuclogin(true);
+      sessionStorage.setItem("set", email);
+      let data = sessionStorage.getItem("set");
+      console.log(data);
       console.log('Login successful:', user);
       var nam="";
       for(var i=0;i<email.length;i++){
@@ -122,7 +127,25 @@ export default function Signin() {
       setErrors({});
     }
   };
+  const form = useRef();
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_ikqrgfw', 'template_3tv2d0l', form.current, {
+        publicKey: 't7K_YzAvF05s1FYuc',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
+  
   return (
     <div className='flex flex-col lg:flex-row h-screen'>
       <div className="lg:w-2/3 h-80 lg:h-full overflow-hidden">
@@ -143,10 +166,10 @@ export default function Signin() {
             </p>
           </div>
 
-          <form onSubmit={register ? handleFormSubmit : handleLogin} className="flex flex-col space-y-2">
+          <form onSubmit={register ? handleFormSubmit : handleLogin} ref={form} className="flex flex-col space-y-2">
             <input
               className='text-black border bg-transparent p-2 border-black outline-none focus:outline-none'
-              type="email"
+              type="email" name='user_email'
               placeholder='Email'
               value={email}
               onChange={(e) => setEmail(e.target.value)}

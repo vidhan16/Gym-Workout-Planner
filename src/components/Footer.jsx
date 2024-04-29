@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './Footer.css'
+import { Link } from "react-router-dom";
+import emailjs from '@emailjs/browser';
 function Footer() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_ikqrgfw', 'template_3tv2d0l', form.current, {
+        publicKey: 't7K_YzAvF05s1FYuc',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
     return (
       <div>
         <div className="container-fluid">
@@ -13,10 +33,10 @@ function Footer() {
             <div className="col-sm-6 col-md-6" style={{ display: "flex", color: "white"}}>
               <div className="container">
                 <div className="form-box">
-                  <form>
+                  <form ref={form} onSubmit={sendEmail}>
                     <div className="input-group">
                       <div className="input-field" id="namefield" style={{ overflow: "hidden" }}>
-                        <input className="m-2 p-2 text-black" type="text" placeholder="Email Address" />
+                        <input name="user_email" className="m-2 p-2 text-black" type="text" placeholder="Email Address" />
                         <button className="bg-white text-black rounded-xl p-2">Subscribe</button>
                       </div>
                     </div>
@@ -56,11 +76,10 @@ function Footer() {
                   <div className="col-md-12">
                     <div className="s_handles">
                       <span className="flex">
-                        <a href="#"><img src="https://img.icons8.com/ios-glyphs/36/FFFFFF/youtube-play.png" alt="youtube-play" /></a>
-                        <a href="#"><img src="https://img.icons8.com/ios-filled/33/FFFFFF/instagram-new--v1.png" alt="instagram-new--v1" /></a>
-                        <a href="#"><img src="https://img.icons8.com/ios-filled/36/FFFFFF/pinterest--v1.png" alt="pinterest--v1" /></a>
-                        <a href="#"><img src="https://img.icons8.com/ios-filled/36/FFFFFF/facebook-new.png" alt="facebook-new" /></a>
-                        <a href="#"><img src="https://img.icons8.com/ios-filled/36/FFFFFF/twitter-squared.png" alt="twitter-squared" /></a>
+                        <a href="https://www.linkedin.com/in/vidhan-gupta-b72784200/" target="_blank"><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/linkedin.png" alt="linkedin"/></a>
+                        <a href="https://www.instagram.com/vidhan__gupta/" target="_blank"><img width="30" height="30" src="https://img.icons8.com/glyph-neue/64/FFFFFF/instagram-new--v1.png" alt="instagram-new--v1"/></a>
+                        <a href="https://github.com/vidhan16" target="_blank"><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/github.png" alt="github"/></a>
+                        <a href="https://www.facebook.com/vidhan.gupta.395/" target="_blank"><img width="30" height="30" src="https://img.icons8.com/ios-filled/50/FFFFFF/facebook-new.png" alt="facebook-new"/></a>
                       </span>
                     </div>
                   </div>

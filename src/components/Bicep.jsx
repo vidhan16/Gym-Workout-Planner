@@ -50,7 +50,7 @@ export default function Bicep() {
 
       {sidebarVisible && (
         <div className="difficulty-filter w-1/5 h-[100vh] border-r-4 pr-2 sticky top-28 flex flex-col items-center min-w-44">
-            {window.innerWidth>1300 ? <button className='absolute right-2 top-4' onClick={toggleSidebar}><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/macos-close.png" alt="macos-close"/></button> : <button onClick={toggleSidebar}><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/macos-close.png" alt="macos-close"/></button>}
+            {window.innerWidth>1300 ? <button className='absolute right-2 top-4' onClick={toggleSidebar}><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/macos-close.png" alt="macos-close"/></button> : null}
             <button className='bg-white text-black py-2 px-4 rounded-lg text-base mb-4 mt-2 w-36' onClick={() => setSort(!sort)}>
             Sort & Filter
             </button>
@@ -114,7 +114,7 @@ export default function Bicep() {
       </div>
       {selectedExercise && window.innerWidth>1300 ?
               (
-                <div className="scrollbar exercise-modal top-[15%] p-4 h-[100vh] w-1/3 z-10 bg-zinc-800 text-white overflow-y-scroll">
+                <div className="scrollbar exercise-modal top-[15%] pt-4 pl-4 pr-4 pb-36 h-[100vh] w-1/3 z-10 bg-zinc-800 text-white overflow-y-scroll">
                   <div className="modal-content">
                     <button onClick={closeExerciseModal} className='absolute left-0'><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/macos-close.png" alt="macos-close"/></button>
                     <img src={selectedExercise.img} alt={selectedExercise.name} />
@@ -126,7 +126,7 @@ export default function Bicep() {
               }
       {selectedExercise && window.innerWidth<=1300 ?
               (
-                <div className="scrollbar absolute exercise-modal p-4 h-full w-full z-10 bg-zinc-800 text-white">
+                <div className="scrollbar fixed exercise-modal pt-4 pl-4 pr-4 pb-36 h-[100vh] w-full z-10 bg-zinc-800 text-white overflow-y-scroll">
                   <div className="modal-content">
                     <button onClick={closeExerciseModal} className='absolute left-0'><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/macos-close.png" alt="macos-close"/></button>
                     <img src={selectedExercise.img} alt={selectedExercise.name} />

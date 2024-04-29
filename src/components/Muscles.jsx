@@ -64,7 +64,6 @@ const Muscles = ({ searchTerm }) => {
     },
   ];
 
-  // Filter muscles based on search term
   const filteredMuscles = work.filter((muscle) =>
     muscle.muscle.toLowerCase().includes(searchTerm.toLowerCase())
   );
