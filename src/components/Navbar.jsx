@@ -62,9 +62,9 @@ const Navbar = ({ setSearchTerm }) => {
           <Link to='/About'>
           <button onClick={window.scrollTo(0,0)} className='hover:bg-zinc-800 hover:text-white'>About Us</button>
           </Link>
-          <Link to='/Planner'>
+          {name!="" && <Link to='/Planner'>
           <button onClick={window.scrollTo(0,0)} className='hover:bg-zinc-800 hover:text-white'>PLANNER</button>
-          </Link>
+          </Link>}
           <Link to='/Signin'>
             <button onClick={window.scrollTo(0,0)} className='hover:bg-zinc-800 hover:text-white'>
               {name!="" ? `Hi, ${name.toUpperCase().replace(/[^a-zA-Z]+/g, "")}` :'LOGIN'}

@@ -1,6 +1,7 @@
 import React from 'react'
 import Vidhan from './Vidhan.jpg'
 import Taniya from './Taniya.jpg'
+import Vaishnavi from './vaishnavi.jpg'
 function About() {
   return (
     <div>
@@ -125,6 +126,7 @@ function About() {
           </div>
         </div>
       </div>
+      <br />
     </div>
 
     </div>

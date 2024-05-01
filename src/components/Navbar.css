@@ -16,7 +16,7 @@ body{
     background-color: white;
     color:black;
 }
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 1100px) {
     .parent button{
         display:none; 
     }

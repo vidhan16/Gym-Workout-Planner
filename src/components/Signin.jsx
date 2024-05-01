@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Google from './google.png';
 import Logo from './Logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 
 export default function Signin() {
@@ -13,6 +13,8 @@ export default function Signin() {
   const [suclogin, setsuclogin] = useState(false);
   const [sucsignup, setsucsignup] = useState(false);
   const [name, setname] = useState(null);
+  const navigate = useNavigate()
+
   useEffect(() => {
     if (!localStorage.getItem('users')) {
       localStorage.setItem('users', JSON.stringify([]));
@@ -125,6 +127,7 @@ export default function Signin() {
       setEmail('');
       setPassword('');
       setErrors({});
+      navigate('/');
     }
   };
   const form = useRef();
