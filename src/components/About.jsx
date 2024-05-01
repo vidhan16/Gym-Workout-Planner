@@ -2,6 +2,7 @@ import React from 'react'
 import Vidhan from './Vidhan.jpg'
 import Taniya from './Taniya.jpg'
 import Vaishnavi from './vaishnavi.jpg'
+import Vibhor from './Vibhor.jpg'
 function About() {
   return (
     <div>
@@ -101,7 +102,7 @@ function About() {
         </div>
         <div className="card" style={{ margin: '0 10px', display: 'grid', gridTemplateRows: '6rem 3rem 3rem 1fr', gridTemplateColumns: '1fr', borderRadius: '30px', overflow: 'hidden', border: '25% solid black', boxShadow: '5px 5px 15px rgba(0, 0, 0,0.5)' }}>
           <div className="display-picture" style={{ gridRow: '2/4', gridColumn: '1/-1', padding: '0 24px', zIndex: 1 }}>
-            <img style={{ height: '100%', aspectRatio: '1/1', borderRadius: '50%' }} src={Vidhan}alt="Developer's Picture" />
+            <img style={{ height: '100%', aspectRatio: '1/1', borderRadius: '50%' }} src={Vaishnavi}alt="Developer's Picture" />
           </div>
           <div className="banner" style={{ gridRow: '1/3', gridColumn: '1/-1' }}>
             <img style={{ width: '100%', height: '100%', objectFit: 'cover' }} src="https://t3.ftcdn.net/jpg/05/40/04/46/360_F_540044645_euvM4jng8cjqkpwT6NkjyfHePtREP3JA.jpg" alt="Banner" />
@@ -114,7 +115,7 @@ function About() {
         </div>
         <div className="card" style={{ margin: '0 10px', display: 'grid', gridTemplateRows: '6rem 3rem 3rem 1fr', gridTemplateColumns: '1fr', borderRadius: '30px', overflow: 'hidden', border: '25% solid black', boxShadow: '5px 5px 15px rgba(0, 0, 0,0.5)' }}>
           <div className="display-picture" style={{ gridRow: '2/4', gridColumn: '1/-1', padding: '0 24px', zIndex: 1 }}>
-            <img style={{ height: '100%', aspectRatio: '1/1', borderRadius: '50%' }} src={Vidhan} alt="Developer's Picture" />
+            <img style={{ height: '100%', aspectRatio: '1/1', borderRadius: '50%' }} src={Vibhor} alt="Developer's Picture" />
           </div>
           <div className="banner" style={{ gridRow: '1/3', gridColumn: '1/-1' }}>
             <img style={{ width: '100%', height: '100%', objectFit: 'cover' }} src="https://t3.ftcdn.net/jpg/05/40/04/46/360_F_540044645_euvM4jng8cjqkpwT6NkjyfHePtREP3JA.jpg" alt="Banner" />
