@@ -3,7 +3,7 @@ import Api from './Api'
 function Planner() {
   const [workouts_num, setworkouts_num] = useState([1,1,1,1,1,1,1]);
   const [exerciseselect, setexerciseselect] = useState(["","","","","","",""]);
-  const [exerciselist, setexerciselist] = useState([[]])
+  const [exerciselist, setexerciselist] = useState([[],[],[],[],[],[],[]])
   const [dayon, setdayon] = useState(null);
   const [index, setindex] = useState(null);
   const handleAddWorkout = (index) => {
@@ -119,7 +119,7 @@ function Planner() {
                 <select key={index} onChange={(e)=>{
                   exerciselist[1].push(e.target.value);
                   setexerciselist(exerciselist);
-                }} className={`bg-black text-white outline-none max-w-${workouts_num.length>2 && 44}`}>
+                }} className={`bg-black text-white outline-none max-w-${workouts_num[1]>2 && 44}`}>
                   <option className='text-center' defaultValue>Select exercise</option>
                   {Api.filter((exercise) => exercise.muscle === exerciseselect[1]).map((exercise) => (
                     <option className='text-center' key={exercise.name}>{exercise.name}</option>
@@ -158,12 +158,12 @@ function Planner() {
             </select>
           </div>
           <div className={`w-4/6 p-2 flex relative`}>
-            <div className={`exercises overflow-x-scroll grid grid-flow-col gap-2 w-[90%] h-full grid-cols-${workouts_num.length}`}>
+            <div className={`exercises overflow-x-scroll grid grid-flow-col gap-2 w-[90%] h-full grid-cols-${workouts_num[2]}`}>
             {new Array(workouts_num.slice(2,3)[0]).fill(0).map((num, index) => (
                 <select key={index} onChange={(e)=>{
-                  exerciselist[0].push(e.target.value);
+                  exerciselist[2].push(e.target.value);
                   setexerciselist(exerciselist);
-                }} className={`bg-black text-white outline-none max-w-${workouts_num.length>2 && 44}`}>
+                }} className={`bg-black text-white outline-none max-w-${workouts_num[2]>2 && 44}`}>
                   <option className='text-center' defaultValue>Select exercise</option>
                   {Api.filter((exercise) => exercise.muscle === exerciseselect[2]).map((exercise) => (
                     <option className='text-center' key={exercise.name}>{exercise.name}</option>
@@ -202,12 +202,12 @@ function Planner() {
             </select>
           </div>
           <div className={`w-4/6 p-2 flex relative`}>
-            <div className={`exercises overflow-x-scroll grid grid-flow-col gap-2 w-[90%] h-full grid-cols-${workouts_num.length}`}>
+            <div className={`exercises overflow-x-scroll grid grid-flow-col gap-2 w-[90%] h-full grid-cols-${workouts_num[3]}`}>
             {new Array(workouts_num.slice(3,4)[0]).fill(0).map((num, index) => (
                 <select key={index} onChange={(e)=>{
-                  exerciselist[0].push(e.target.value);
+                  exerciselist[3].push(e.target.value);
                   setexerciselist(exerciselist);
-                }} className={`bg-black text-white outline-none max-w-${workouts_num.length>2 && 44}`}>
+                }} className={`bg-black text-white outline-none max-w-${workouts_num[3]>2 && 44}`}>
                   <option className='text-center' defaultValue>Select exercise</option>
                   {Api.filter((exercise) => exercise.muscle === exerciseselect[3]).map((exercise) => (
                     <option className='text-center' key={exercise.name}>{exercise.name}</option>
@@ -246,12 +246,12 @@ function Planner() {
             </select>
           </div>
           <div className={`w-4/6 p-2 flex relative`}>
-            <div className={`exercises overflow-x-scroll grid grid-flow-col gap-2 w-[90%] h-full grid-cols-${workouts_num.length}`}>
+            <div className={`exercises overflow-x-scroll grid grid-flow-col gap-2 w-[90%] h-full grid-cols-${workouts_num[4]}`}>
             {new Array(workouts_num.slice(4,5)[0]).fill(0).map((num, index) => (
                 <select key={index} onChange={(e)=>{
-                  exerciselist[0].push(e.target.value);
+                  exerciselist[4].push(e.target.value);
                   setexerciselist(exerciselist);
-                }} className={`bg-black text-white outline-none max-w-${workouts_num.length>2 && 44}`}>
+                }} className={`bg-black text-white outline-none max-w-${workouts_num[4]>2 && 44}`}>
                   <option className='text-center' defaultValue>Select exercise</option>
                   {Api.filter((exercise) => exercise.muscle === exerciseselect[4]).map((exercise) => (
                     <option className='text-center' key={exercise.name}>{exercise.name}</option>
@@ -290,12 +290,12 @@ function Planner() {
             </select>
           </div>
           <div className={`w-4/6 p-2 flex relative`}>
-            <div className={`exercises overflow-x-scroll grid grid-flow-col gap-2 w-[90%] h-full grid-cols-${workouts_num.length}`}>
+            <div className={`exercises overflow-x-scroll grid grid-flow-col gap-2 w-[90%] h-full grid-cols-${workouts_num[5]}`}>
             {new Array(workouts_num.slice(5,6)[0]).fill(0).map((num, index) => (
                 <select key={index} onChange={(e)=>{
-                  exerciselist[0].push(e.target.value);
+                  exerciselist[5].push(e.target.value);
                   setexerciselist(exerciselist);
-                }} className={`bg-black text-white outline-none max-w-${workouts_num.length>2 && 44}`}>
+                }} className={`bg-black text-white outline-none max-w-${workouts_num[5]>2>2 && 44}`}>
                   <option className='text-center' defaultValue>Select exercise</option>
                   {Api.filter((exercise) => exercise.muscle === exerciseselect[5]).map((exercise) => (
                     <option className='text-center' key={exercise.name}>{exercise.name}</option>
@@ -334,12 +334,12 @@ function Planner() {
             </select>
           </div>
           <div className={`w-4/6 p-2 flex relative`}>
-            <div className={`exercises overflow-x-scroll grid grid-flow-col gap-2 w-[90%] h-full grid-cols-${workouts_num.length}`}>
+            <div className={`exercises overflow-x-scroll grid grid-flow-col gap-2 w-[90%] h-full grid-cols-${workouts_num[6]}`}>
             {new Array(workouts_num.slice(6,7)[0]).fill(0).map((num, index) => (
                 <select key={index} onChange={(e)=>{
-                  exerciselist[0].push(e.target.value);
+                  exerciselist[6].push(e.target.value);
                   setexerciselist(exerciselist);
-                }} className={`bg-black text-white outline-none max-w-${workouts_num.length>2 && 44}`}>
+                }} className={`bg-black text-white outline-none max-w-${workouts_num[6]>2 && 44}`}>
                   <option className='text-center' defaultValue>Select exercise</option>
                   {Api.filter((exercise) => exercise.muscle === exerciseselect[6]).map((exercise) => (
                     <option className='text-center' key={exercise.name}>{exercise.name}</option>
