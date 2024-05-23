@@ -84,7 +84,7 @@ const Muscles = ({ searchTerm }) => {
                 onClick={() => {
                   window.scrollTo(0, 0);
                 }}
-                className='min-w-72 min-h-48'
+                className='min-w-72 min-h-48 hover:opacity-70'
                 src={muscle.img}
                 alt=''
               />

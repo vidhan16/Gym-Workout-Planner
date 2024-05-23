@@ -106,7 +106,7 @@ export default function Bicep() {
         <div className="row gap-2 flex justify-center text-center">
           {filteredExercises.map((exercise) => (
             <div key={exercise.name} className='bics col-lg-3 col-md-8 col-sm-8 col-xs-12 mb-4'>
-              <img className='cursor-pointer' src={exercise.img} alt={exercise.name} onClick={()=>{openExerciseModal(exercise);scrollTo(0,0)}}/>
+              <img className='cursor-pointer hover:opacity-70' src={exercise.img} alt={exercise.name} onClick={()=>{openExerciseModal(exercise);scrollTo(0,0)}}/>
               <p>{exercise.name}</p>
             </div>
           ))}

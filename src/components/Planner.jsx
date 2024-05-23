@@ -51,7 +51,7 @@ function Planner() {
         </div>
         <div className="day border flex relative">
           <div className="dayname text-[1.5vw] border-r w-1/6 text-center p-3 cursor-pointer" onClick={()=>{setdayon("Sunday");setindex(0)}}>
-            Sunday
+            <p className='hover:scale-110'>Sunday</p>
           </div>
           <div className='flex align-middle justify-center w-1/6 border-r px-4'>
             <select className='w-full text-black text-white text-[1.2vw] bg-black outline-none' onChange={(e)=>{
@@ -95,7 +95,7 @@ function Planner() {
         </div>
         <div className="day border flex relative">
           <div className="dayname text-[1.5vw] border-r w-1/6 text-center p-3" onClick={()=>{setdayon("Monday");setindex(1)}}>
-            Monday
+          <p className='hover:scale-110 cursor-pointer'>Monday</p>
           </div>
           <div className='flex align-middle justify-center w-1/6 border-r px-4'>
             <select className='w-full text-black text-white bg-black outline-none' onChange={(e)=>{
@@ -139,7 +139,7 @@ function Planner() {
         </div>
         <div className="day border flex relative">
           <div className="dayname text-[1.5vw] border-r w-1/6 text-center p-3" onClick={()=>{setdayon("Tuesday");setindex(2)}}>
-            Tuesday
+          <p className='hover:scale-110 cursor-pointer'>Tuesday</p>
           </div>
           <div className='flex align-middle justify-center w-1/6 border-r px-4'>
             <select className='w-full text-black text-white bg-black outline-none' onChange={(e)=>{
@@ -183,7 +183,7 @@ function Planner() {
         </div>
         <div className="day border flex relative">
           <div className="dayname text-[1.5vw] border-r w-1/6 text-center p-3" onClick={()=>{setdayon("Wednesday");setindex(3)}}>
-            Wednesday
+          <p className='hover:scale-110 cursor-pointer'>Wednesday</p>
           </div>
           <div className='flex align-middle justify-center w-1/6 border-r px-4'>
             <select className='w-full text-black text-white bg-black outline-none' onChange={(e)=>{
@@ -227,7 +227,7 @@ function Planner() {
         </div>
         <div className="day border flex relative">
           <div className="dayname text-[1.5vw] border-r w-1/6 text-center p-3" onClick={()=>{setdayon("Thursday");setindex(4)}}>
-            Thursday
+          <p className='hover:scale-110 cursor-pointer'>Thursday</p>
           </div>
           <div className='flex align-middle justify-center w-1/6 border-r px-4'>
             <select className='w-full text-black text-white bg-black outline-none' onChange={(e)=>{
@@ -271,7 +271,7 @@ function Planner() {
         </div>
         <div className="day border flex relative">
           <div className="dayname text-[1.5vw] border-r w-1/6 text-center p-3" onClick={()=>{setdayon("Friday");setindex(5)}}>
-            Friday
+          <p className='hover:scale-110 cursor-pointer'>Friday</p>
           </div>
           <div className='flex align-middle justify-center w-1/6 border-r px-4'>
             <select className='w-full text-black text-white bg-black outline-none' onChange={(e)=>{
@@ -315,7 +315,7 @@ function Planner() {
         </div>
         <div className="day border flex relative">
           <div className="dayname text-[1.5vw] border-r w-1/6 text-center p-3" onClick={()=>{setdayon("Saturday");setindex(6)}}>
-            Saturday
+          <p className='hover:scale-110 cursor-pointer'>Saturday</p>
           </div>
           <div className='flex align-middle justify-center w-1/6 border-r px-4'>
             <select className='w-full text-black text-white bg-black outline-none' onChange={(e)=>{
