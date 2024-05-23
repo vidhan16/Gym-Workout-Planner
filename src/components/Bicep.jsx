@@ -106,7 +106,7 @@ export default function Bicep() {
         <div className="row gap-2 flex justify-center text-center">
           {filteredExercises.map((exercise) => (
             <div key={exercise.name} className='bics col-lg-3 col-md-8 col-sm-8 col-xs-12 mb-4'>
-              <img className='cursor-pointer' src={exercise.img} alt={exercise.name} onClick={()=>{openExerciseModal(exercise)}}/>
+              <img className='cursor-pointer' src={exercise.img} alt={exercise.name} onClick={()=>{openExerciseModal(exercise);scrollTo(0,0)}}/>
               <p>{exercise.name}</p>
             </div>
           ))}
@@ -114,7 +114,7 @@ export default function Bicep() {
       </div>
       {selectedExercise && window.innerWidth>1300 ?
               (
-                <div className="scrollbar fixed right-0 exercise-modal top-[15%] pt-4 pl-4 pr-4 pb-36 h-[100vh] w-1/3 z-10 bg-zinc-800 text-white overflow-y-scroll">
+                <div className="scrollbar right-0 exercise-modal top-[15%] pt-4 pl-4 pr-4 pb-36 h-[100vh] w-1/2 z-10 bg-zinc-800 text-white overflow-y-scroll">
                   <div className="modal-content">
                     <button onClick={closeExerciseModal} className='absolute left-0'><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/macos-close.png" alt="macos-close"/></button>
                     <img src={selectedExercise.img} alt={selectedExercise.name} />
