@@ -76,7 +76,7 @@ const Navbar = ({ setSearchTerm }) => {
       <div className={`options flex flex-col absolute rounded-sm right-0 z-10 w-40`}>
       <Link to='/'><button onClick={openi} className='login p-2  w-full'>Home</button></Link>
       <Link to='/Muscles'><button onClick={openi} className='p-2  w-full'>Exercises</button></Link>
-          <button className='p-2  w-full'>About Us</button>
+      <Link to='/About'><button className='p-2  w-full'>About Us</button></Link>
           <Link to='/Signin'><button onClick={openi} className='p-2  w-full'>
           {name!="" ? `Hi, ${name.toUpperCase().replace(/[^a-zA-Z]+/g, "")}` :'LOGIN'}
             </button></Link>
