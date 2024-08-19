@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './Footer.css'
 import { Link } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 function Footer() {
   const form = useRef();
-
+  const [textsub, settextsub] = useState("Subscribe");
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -37,7 +37,11 @@ function Footer() {
                     <div className="input-group">
                       <div className="input-field" id="namefield" style={{ overflow: "hidden" }}>
                         <input name="user_email" className="m-2 p-2 text-black" type="text" placeholder="Email Address" />
-                        <button className="bg-white text-black rounded-xl p-2">Subscribe</button>
+                        <button onClick={()=>{
+                          settextsub("Subscribed");
+                          setTimeout(() => {
+                          settextsub("Subscribe");
+                        },3000);}} className="bg-white text-black rounded-xl p-2">{textsub}</button>
                       </div>
                     </div>
                   </form>
